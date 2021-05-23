@@ -98,3 +98,7 @@ body {
 .icon-check:before {
   content: "\e902";
 }
+
+#root {
+  padding: 0 15px;
+}

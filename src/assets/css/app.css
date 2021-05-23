@@ -1,7 +1,9 @@
 .app {
   position: relative;
-  height: 700px; 
-  width: 500px;
+  height: 100%;
+  width: 100%;
+  min-height: 700px; 
+  max-width: 500px;
   margin: 0 auto;  
   background-color: var(--app-bg);
   -webkit-box-shadow: var(--app-shadow);
@@ -209,7 +211,7 @@
   align-items: stretch;
   flex-wrap: nowrap;
   width: 100%;
-  max-width: 480px;
+  max-width: calc(100% - 15px);
   bottom: 1%;
   left: 50%;  
 
@@ -248,4 +250,20 @@
 
 .addtask__button:hover {
   background-color: var(--mellow-apricot);
+}
+
+@media only screen and (max-width: 500px) {
+  .addtask__button span {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .date__day {
+    font-size: 25px;
+  }
+
+  .date__month {
+    font-size: 18px;
+  }
 }

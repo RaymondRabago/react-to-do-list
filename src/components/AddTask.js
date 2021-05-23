@@ -32,7 +32,7 @@ const AddTask = ({onAddTask}) => {
                     value={inputValue} 
                     onChange={(event) => setInputValue(event.target.value)}
                 />
-                <button className="addtask__button">Add New <i className="icon icon-plus"></i></button>
+                <button className="addtask__button"> <span>Add New</span> <i className="icon icon-plus"></i></button>
             </div>
         </form>  
     );
