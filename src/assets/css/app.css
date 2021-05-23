@@ -1,0 +1,251 @@
+.app {
+  position: relative;
+  height: 700px; 
+  width: 500px;
+  margin: 0 auto;  
+  background-color: var(--app-bg);
+  -webkit-box-shadow: var(--app-shadow);
+  -moz-box-shadow: var(--app-shadow);
+  box-shadow: var(--app-shadow);
+  border-radius: 30px;
+
+}
+
+/* ===== HEADER ===== */ 
+.header {
+  padding: 20px 15px;
+  background-color: var(--header-bg);
+  text-align: center;
+  border-radius: 30px 30px 0 0;
+}
+
+.date,
+.header__count {
+  color: var(--white);  
+}
+
+.date {
+  margin: 0;
+}
+
+.date__day {
+  text-transform: uppercase;
+  font-size: 34px;
+}
+
+.date__month {
+  font-size: 25px;
+  font-weight: 400;
+}
+
+.header__count {
+  font-size: 14px;
+  margin: 5px 0 0;
+}
+
+
+/* ===== TASKS VIEW ===== */ 
+.alltasks {
+  margin-top: 50px;
+  padding: 0;
+  max-height: 450px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.alltasks::-webkit-scrollbar {
+  width: 5px;
+  background-color: var(--lynx-white);
+}
+
+.alltasks::-webkit-scrollbar-thumb {
+  background-color: var(--pacific-blue);
+}
+
+.task {
+  display: flex;
+  align-items: center;
+  margin: 0 auto 15px;
+  padding: 15px;
+  max-width: 450px;
+  background-color: #fff;
+  border-radius: 20px;
+  -webkit-box-shadow: var(--task-shadow);
+  -moz-box-shadow: var(--task-shadow);
+  box-shadow: var(--task-shadow);  
+
+  transition: all 0.4s;
+}
+
+/* TASK CHECKBOX */ 
+.checkbox {
+  position: relative;
+}
+
+.checkbox__input {
+  position: relative;
+  cursor: pointer;
+  opacity: 0;
+  z-index: 1;
+}
+
+.checkbox__marker {
+  position: absolute;
+  display: block;
+  padding: 7px;
+  top: 50%;
+  left: 50%;
+  border: 1px solid var(--orange-peel);
+  background-color: var(--whtie);
+
+  transform: translate(-50%, -50%);
+  transition: all 0.4s;
+}
+
+.checkbox__input:hover + .checkbox__marker {
+  background-color: var(--orange-peel);
+}
+
+.checkbox__input:checked + .checkbox__marker::after {
+  display: block;
+}
+
+.checkbox__marker::after {
+  position: absolute;
+  display: none;
+  font-family: 'icomoon' !important;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  content: '\e902';
+  color: white;
+  background-color: var(--orange-peel);  
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.task__content {
+  position: relative;
+  padding: 0 15px;
+  width: 100%;
+  line-height: 1.3;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.4s;
+}
+
+
+.task__delete {
+  padding: 5px;
+  margin: 0 auto;
+  margin-right: 0;
+  font-size: 18px;
+  border: 0;
+  outline: 0;
+  color: var(--fire-opal);
+  background-color: transparent;
+  cursor: pointer;
+  opacity: 0;
+  transition: all 0.4s;
+}
+
+
+
+.task:hover .task__delete {
+  opacity: 1;
+}
+
+
+/*  TASKS TRANSITIONS */ 
+.task-enter {
+  opacity: 0;
+  transform: translate(-100%, 0);
+}
+
+.task-enter-active {
+  opacity: 1;
+  transform: translate(0, 0);
+  transition: all 400ms;
+}
+
+.task-exit {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+.task-exit-active {
+  opacity: 0;
+  transform: translate(100%, 0);
+  transition: all 500ms;
+}
+
+
+/* TASK MODIFIER */ 
+.task--complete {
+  background-color: var(--lynx-white);
+  box-shadow: none;
+}
+
+.task--complete .checkbox__marker::after{ 
+  background-color: var(--silver);
+}
+
+.task--complete .task__content {
+  color: var(--silver);
+  text-decoration: line-through;
+}
+
+.task--complete .task__delete {
+  opacity: 1;
+}
+
+
+/* ===== ADD TASK =====  */ 
+.addtask {
+  position: absolute;
+  display: flex;
+  align-items: stretch;
+  flex-wrap: nowrap;
+  width: 100%;
+  max-width: 480px;
+  bottom: 1%;
+  left: 50%;  
+
+  transform: translateX(-50%);
+}
+
+.addtask__input,
+.addtask__button {
+  outline: 0;
+  border: 0;
+}
+
+.addtask__input {
+  padding: 15px;
+  width: 75%;
+  background-color: var(--white);
+  border-radius: 30px 0 0 30px;
+}
+
+.addtask__button {
+  padding: 10px 15px;
+  width: 25%;
+  font-weight: 600;
+  background-color: var(--orange-peel);
+  border: 1px solid var(--orange-peel);
+  border-radius: 0 30px 30px 0;
+  color: var(--white);
+  cursor: pointer;
+  transition: all 0.4s;
+}
+
+.addtask__button .icon {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.addtask__button:hover {
+  background-color: var(--mellow-apricot);
+}
