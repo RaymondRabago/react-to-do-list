@@ -1,7 +1,7 @@
 # React To-Do List
 
 Hello! Welcome to my first React Application.\
-This is a simple React To-do List application. Where the user can create, view and delete item/task in the list.
+This is a simple [React To-do List](https://rymnd-to-do-list.netlify.app/) application. Where the user can create, view and delete item/task in the list.
 
 In this Project I used the following tools:\
 [Create React Application](https://github.com/facebook/create-react-app)\
