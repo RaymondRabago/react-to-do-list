@@ -3,6 +3,7 @@
   height: 100%;
   width: 100%;
   min-height: 700px; 
+  min-width: 500px;
   max-width: 500px;
   margin: 0 auto;  
   background-color: var(--app-bg);
@@ -49,7 +50,7 @@
 /* ===== TASKS VIEW ===== */ 
 .alltasks {
   margin-top: 50px;
-  padding: 0;
+  padding: 0 10px;
   max-height: 450px;
   overflow-y: auto;
   overflow-x: hidden;
@@ -67,9 +68,8 @@
 .task {
   display: flex;
   align-items: center;
-  margin: 0 auto 15px;
+  margin: 0 0 15px;
   padding: 15px;
-  max-width: 450px;
   background-color: #fff;
   border-radius: 20px;
   -webkit-box-shadow: var(--task-shadow);
@@ -252,10 +252,15 @@
   background-color: var(--mellow-apricot);
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 530px) {
+  .app {
+    min-width: unset;
+    max-width: 350px;
+  }
+
   .addtask__button span {
     display: none;
-  }
+  }  
 }
 
 @media only screen and (max-width: 425px) {

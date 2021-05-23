@@ -71,6 +71,7 @@ body {
   align-items: center;
   justify-content: center;
   font-family: 'Montserrat', sans-serif;    
+  padding: 0 15px;
   overflow: auto;
 }
 
@@ -99,6 +100,3 @@ body {
   content: "\e902";
 }
 
-#root {
-  padding: 0 15px;
-}
